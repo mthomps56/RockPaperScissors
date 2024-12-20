@@ -1,0 +1,72 @@
+body { margin: 0; padding: 0; background-color: darkgrey;}
+
+#header {
+  display: flex;
+  justify-content: center;
+  background-color: peachpuff;
+  color: red;
+  font-size: 45px;
+  font-weight: 700px;
+  padding: 25px;
+ }
+
+.scoreInfo {
+  display: block;
+  background-color: lightgrey;
+}
+
+#score {
+  display: flex;
+  justify-content: center;
+  background-color: lightgrey;
+  color: darkred;
+  font-size: 25px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.roundContainer { display: flex; justify-content: center; }
+
+#round { color: #0080ff; margin-right: 10px; }
+
+.playerComputerScores {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+#player { 
+  color: green; 
+  margin-right: 10px;
+} 
+
+#computer { 
+  color: purple; 
+  margin-right: 10px;
+
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.rps {
+  width: 150px;
+  height: 150px;
+}
+
+.winner {
+  align-content: center;
+  padding: 50px; 
+  color: red; 
+  font-size: 25px; 
+  font-weight: 700px;
+}
+
+
+
