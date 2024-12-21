@@ -3,7 +3,7 @@ body { margin: 0; padding: 0; background-color: darkgrey;}
 #header {
   display: flex;
   justify-content: center;
-  background-color: peachpuff;
+  background-color: #e3af81;
   color: red;
   font-size: 45px;
   font-weight: 700px;

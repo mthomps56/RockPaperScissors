@@ -19,14 +19,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let flag = true;  //Keep while loop going until rock, paper, or scissors chosen.
   let humanChoice;
 
-  while (flag === true) {
-    humanChoice = prompt("Player, type rock, paper, or scissors and press [Enter].");
-    humanChoice = humanChoice.toLowerCase();  //convert input to lowercase.
-    console.log(humanChoice);
-    //Check for proper input
     if (humanChoice === 'rock') {
       flag = false;
     } else if (humanChoice === 'paper') {
@@ -36,7 +30,6 @@ function getHumanChoice() {
     } else {
       alert("Must choose rock, paper, or scissors");
     }
-  }
   return humanChoice;
 }
 
