@@ -25,9 +25,16 @@ body { margin: 0; padding: 0; background-color: darkgrey;}
   font-weight: 700;
 }
 
-.roundContainer { display: flex; justify-content: center; }
+.roundContainer { 
+  display: flex; 
+  justify-content: center; 
+}
 
-#round { color: #0080ff; margin-right: 10px; }
+#round { 
+  color: #0080ff;  
+  margin-right: 10px; 
+  font-weight: 700;
+}
 
 .playerComputerScores {
   display: flex;
@@ -51,17 +58,22 @@ body { margin: 0; padding: 0; background-color: darkgrey;}
 
 .buttonContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .rps {
   width: 150px;
   height: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
+
 .winner {
-  align-content: center;
+  text-align: center;
   padding: 50px; 
   color: red; 
   font-size: 25px; 
