@@ -3,33 +3,41 @@ function getComputerChoice() {
   
   // Get 0, 1, or 2 and convert to Computer's choice.
   let convertChoice = Math.floor(Math.random() * 3);
-  
   switch (convertChoice) {
-    case 0:
+    case: 0:
+      const rock = document.querySelector('#r');
+      rock.style.background = "purple";
       compChoice = 'rock';
       break;
     case 1:
+      const paper = document.querySelector('#p');
+      paper.style.background = "purple";
       compChoice = 'paper';
       break;
     case 2:
+      const scissors = document.querySelector('#p');
+      paper.style.background = "purple";
       compChoice = 'scissors';
       break;
   }
+  
   return compChoice;
 }
 
-function getHumanChoice() {
+function getHumanChoice(event) {
   let humanChoice;
-
-    if (humanChoice === 'rock') {
-      flag = false;
-    } else if (humanChoice === 'paper') {
-      flag = false;
-    } else if (humanChoice === 'scissors') {
-      flag = false;
-    } else {
-      alert("Must choose rock, paper, or scissors");
+  switch (event.target.id) {
+    case 'r':
+      humanChoice = 'rock';
+      break;
+    case 'p':
+      humanChoice = 'paper';
+      break;
+    case 's':
+      humanChoice = 'scissors';
+      break;
     }
+  event.target.style.background = "green";
   return humanChoice;
 }
 
@@ -111,6 +119,9 @@ while (counter < 5) {
 
   counter += 1;
 }
+/////////////////////////
+
+let buttonContainer = document.querySelector('.buttonContainer', (event) => {
 
   
 
