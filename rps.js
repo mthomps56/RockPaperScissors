@@ -93,14 +93,29 @@ function playRound(humanChoice, computerChoice) {
   } return winner;
 }
 
+function reset() {
+  playerScore = 0;
+  computerScore = 0;
+  round = 0;
+  p.textContent = "Who will win? Find out at 11 for 12.99 a month.";
+  winner = undefined;
+  humanChoice = undefined;
+  computerChoice = undefined;
+}
+
 // Start Game
+
 let playerScore = 0, computerScore = 0, round = 0;
 let winner, humanChoice, computerChoice;
 
 const buttonContainer = document.querySelector('.buttonContainer');
 const pScore = document.querySelector('#pScore');
-const cScore = document.queryselector('#cScore');
+const cScore = document.querySelector('#cScore');
+const roundNum = document.querySelector('#roundNum');
+const p = document.querySelector('p');
 
+pScore.textContent = 0;
+cScore.textContent = 0;
 
 buttonContainer.addEventListener('click', (e) => {
   humanChoice = getHumanChoice(e);
@@ -115,15 +130,21 @@ buttonContainer.addEventListener('click', (e) => {
       computerScore += 1;
       break;
   }
-  //playerScore > computerScore ? pScore.
+  
+  if (e.style.id != 'bC') {
+    round += 1;
+    pScore.textContent = playerScore;
+    cScore.textContent = computerScore;
+    roundNum.textContent = round;
+    p.textContent = `Winner is ${winner}.\nPlayer chooses ${humanChoice}
+                     Computer chooses ${computerChoice}\nScore: Player-
+                     ${playerScore}\t Computer-${computerScore}`;
+  }
+
+  if (round >= 5) {
+    reset();
+  }
 });
-
-
-/*
-alert(`Winner is ${winner}.\nPlayer chooses ${humanChoice}
-         Computer chooses ${computerChoice}\nScore: Player-
-         ${humanScore}\t Computer-${computerScore}`);
-         */
 
 
 
