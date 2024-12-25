@@ -94,15 +94,28 @@ function playRound(humanChoice, computerChoice) {
 }
 
 // Start Game
-let pScore = 0, cScore = 0;
+let playerScore = 0, computerScore = 0, round = 0;
+let winner, humanChoice, computerChoice;
 
-let winner, humanChoice, computerChoice, counter = 0;
+const buttonContainer = document.querySelector('.buttonContainer');
+const pScore = document.querySelector('#pScore');
+const cScore = document.queryselector('#cScore');
 
-let buttonContainer = document.querySelector('.buttonContainer');
 
 buttonContainer.addEventListener('click', (e) => {
   humanChoice = getHumanChoice(e);
-  computerChoice = getComputerChoice(e);
+  computerChoice = getComputerChoice();
+  winner = playRound(humanChoice, computerChoice);
+
+  switch (winner) {
+    case 'player':
+      playerScore += 1;
+      break;
+    case 'computer':
+      computerScore += 1;
+      break;
+  }
+  //playerScore > computerScore ? pScore.
 });
 
 
