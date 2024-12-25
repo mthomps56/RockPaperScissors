@@ -103,6 +103,15 @@ function reset() {
   computerChoice = undefined;
 }
 
+function clearBtnColor() {
+  let buttonContainer = document.querySelectorAll('button');
+  buttonContainer.forEach((button) => {
+    button.style.background = "white";
+  });
+}
+    
+  
+
 // Start Game
 
 let playerScore = 0, computerScore = 0, round = 0;
@@ -118,32 +127,33 @@ pScore.textContent = 0;
 cScore.textContent = 0;
 
 buttonContainer.addEventListener('click', (e) => {
-  humanChoice = getHumanChoice(e);
-  computerChoice = getComputerChoice();
-  winner = playRound(humanChoice, computerChoice);
+  if (e.target.id != 'bC') {
+    humanChoice = getHumanChoice(e);
+    computerChoice = getComputerChoice();
+    winner = playRound(humanChoice, computerChoice);
 
-  switch (winner) {
-    case 'player':
-      playerScore += 1;
-      break;
-    case 'computer':
-      computerScore += 1;
-      break;
-  }
+    switch (winner) {
+      case 'player':
+        playerScore += 1;
+        break;
+      case 'computer':
+        computerScore += 1;
+        break;
+    }
   
-  if (e.style.id != 'bC') {
-    round += 1;
-    pScore.textContent = playerScore;
-    cScore.textContent = computerScore;
-    roundNum.textContent = round;
-    p.textContent = `Winner is ${winner}.\nPlayer chooses ${humanChoice}
-                     Computer chooses ${computerChoice}\nScore: Player-
-                     ${playerScore}\t Computer-${computerScore}`;
-  }
+      round += 1;
+      pScore.textContent = playerScore;
+      cScore.textContent = computerScore;
+      roundNum.textContent = round;
+      p.textContent = `Winner is ${winner}.\nPlayer chooses ${humanChoice}
+                       Computer chooses ${computerChoice}\nScore: Player-
+                       ${playerScore}\t Computer-${computerScore}`;
+    }
 
-  if (round >= 5) {
-    reset();
-  }
+    if (round >= 5) {
+      reset();
+      clearBtnColor();
+    }
 });
 
 
