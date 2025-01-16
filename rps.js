@@ -97,7 +97,6 @@ function reset() {
   playerScore = 0;
   computerScore = 0;
   round = 0;
-  p.textContent = "Who will win? Find out at 11 for 12.99 a month.";
   winner = undefined;
   humanChoice = undefined;
   computerChoice = undefined;
@@ -145,15 +144,19 @@ buttonContainer.addEventListener('click', (e) => {
       pScore.textContent = playerScore;
       cScore.textContent = computerScore;
       roundNum.textContent = round;
-      p.textContent = `Winner is ${winner}.\nPlayer chooses ${humanChoice}
-                       Computer chooses ${computerChoice}\nScore: Player-
+      p.textContent = `Winner is ${winner}.\nPlayer chooses ${humanChoice}.\n
+                       Computer chooses ${computerChoice}.\nScore: Player-
                        ${playerScore}\t Computer-${computerScore}`;
     }
 
-    if (round >= 5) {
-      reset();
-      clearBtnColor();
-    }
+  if (round >=5) {
+    clearBtnColor();
+    playerScore > computerScore ? p.textContent = `You win!` 
+                                : playerScore < computerScore 
+                                ? p.textContent = `Computer Wins`
+                                : p.textContent = "TIE"  
+    reset()
+  }
 });
 
 
